@@ -6,21 +6,64 @@
 
 <ion-content [fullscreen]="true" color="light">
   <ion-searchbar placeholder="Buscar"></ion-searchbar>
+
   <ion-list>
-    <ion-item lines="full">
-      <ion-thumbnail slot="start">
-        <img alt="Logo-Filme" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jTrXwK56EoLHHxfBkpwGdfmy2uh.jpg" />
-      </ion-thumbnail>
-      <ion-label class="ion-text-wrap">
-        <div>
-          <h1>Top Gun: Maverick (2022)</h1>
-          <p>26/05/2022 (BR) - 2h 11m</p>
-          <p>Ação, Drama</p>
-        </div>
-      </ion-label>
-      <ion-chip color="success" outline>
-        <ion-label>84%</ion-label>
-      </ion-chip>
-    </ion-item>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img
+            alt="Logo-Filme"
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jTrXwK56EoLHHxfBkpwGdfmy2uh.jpg"
+          />
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Top Gun: Maverick (2022)</h1>
+            <p>26/05/2022 (BR) - 2h 11m</p>
+            <p>Ação, Drama</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>84%</ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img
+            alt="Logo-Filme"
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aeJHkkrDvbXPB25NghNbv5kUBVi.jpg"
+          />
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Sorte (2022)</h1>
+            <p>05/08/2022 (GB) - 1h 37m</p>
+            <p>Animação, Aventura, Comédia, Fantasia</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>80%</ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
   </ion-list>
 </ion-content>
