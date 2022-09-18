@@ -1,7 +1,9 @@
+import { DadosService } from './../services/dados.service';
 import { IFilme } from '../models/IFilme.model';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -19,7 +21,8 @@ export class Tab1Page {
       duracao: '2h 11m',
       classificacao: 84,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jTrXwK56EoLHHxfBkpwGdfmy2uh.jpg',
-      generos: ['Ação', 'Drama']
+      generos: ['Ação', 'Drama'],
+      pagina: '/top-gun'
     },
     {
       nome: 'Sorte (2022)',
@@ -27,11 +30,21 @@ export class Tab1Page {
       duracao: '1h 37m',
       classificacao: 80,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aeJHkkrDvbXPB25NghNbv5kUBVi.jpg',
-      generos: ['Animação', 'Aventura', 'Comédia', 'Fantasia']
+      generos: ['Animação', 'Aventura', 'Comédia', 'Fantasia'],
+      pagina: '/sorte'
     }
   ];
 
-  constructor(private alertController: AlertController, private toastController: ToastController) { }
+  constructor(
+    public alertController: AlertController,
+    public toastController: ToastController,
+    public dadosService: DadosService,
+    public route: Router) { }
+
+  exibirFilme(filme: IFilme) {
+    this.dadosService.guardarDados('filme', filme);
+    this.route.navigateByUrl('/dados-filme');
+  }
 
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({
@@ -48,9 +61,9 @@ export class Tab1Page {
           text: 'SIM, favoritar!',
           handler: () => {
             this.apresentarToast();
+          }
         }
-      }
-    ]
+      ]
     });
 
     await alert.present();
