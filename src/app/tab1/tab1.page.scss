@@ -1,5 +1,5 @@
 ion-item {
-  
+
   --padding-start: 10px;
   --inner-padding-end: 10px;
 
@@ -21,5 +21,11 @@ ion-item {
   }
   ion-chip{
     padding-inline: 3px;
+  }
+
+  ion-badge{
+    font-weight: 300;
+    font-size: 0.6rem;
+    margin-right: 2px;
   }
 }
